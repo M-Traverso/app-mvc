@@ -15,7 +15,19 @@ const getUserId = (req,res) => {
     res.send(id);
 }
 
+const getUserByName = (req,res) => {
+    const {name} = req.params;
+    const user = users.find(elem => elem.name.includes(name));
+    if(user.length){
+        res.send(user);
+    }else{
+        res.send('Not found')
+    }
+    res.send(id);
+}
+
 module.exports = {
     getAllUsers,
-    getUserId
+    getUserId,
+    getUserByName
 }
