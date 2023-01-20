@@ -1,9 +1,9 @@
 const express = require('express');
-const {detalle} = require('../controllers/menuControllers');
+const {detalle} = require('../controllers/menuController');
 
 const routerMenu = express.Router();
 
-routerMenu.get('/detalle/:id', detalle);
+routerMenu.get('/index/detalle/:id', detalle);
 
 module.exports = routerMenu;
 
