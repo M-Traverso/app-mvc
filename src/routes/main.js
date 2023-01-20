@@ -1,9 +1,11 @@
 const express = require('express');
-const {index, about} = require('../controllers/mainControllers');
+const {home, about, index} = require('../controllers/mainControllers');
 
 const routerMain = express.Router();
 
-routerMain.get('/', index);
+routerMain.get('/', home);
+
+routerMain.get('/index', index);
 
 routerMain.get('/about', about);
 

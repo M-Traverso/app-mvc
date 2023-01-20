@@ -4,7 +4,7 @@ const { getUserByName, getAllUsers, getUserId} = require('../controllers/userCon
 const routerUser = express.Router();
 
 routerUser.get('/users', getAllUsers);
-routerUser.get('/user/:id', getUserId);
-routerUser.get('/user/:name', getUserByName);
+routerUser.get('/users/:id', getUserId);
+routerUser.get('/users/:name', getUserByName);
 
 module.exports = routerUser;

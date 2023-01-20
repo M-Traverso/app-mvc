@@ -1,13 +1,19 @@
+const home =  (req,res) => {
+    res.render('home')
+}
+
 const index =  (req,res) => {
-    res.send('<h1>Bienvenido a la app-mvc</h1>')
+    res.render('index')
 }
 
 const about = (req,res) => {
-    res.send('Somos el grupo numero ...... about')
+    res.render('about')
 }
 
 
+
 module.exports = {
-    index,
-    about
+    home,
+    about,
+    index
 }

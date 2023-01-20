@@ -13,7 +13,12 @@ const users = [
         id: 3,
         name: 'Ricardo',
         age: 45
-    }
+    },
+    {
+        id: 4,
+        name: 'Mario',
+        age: 20
+    },
 ];
 
 module.exports = users;

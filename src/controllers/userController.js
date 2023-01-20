@@ -1,7 +1,7 @@
 const users = require('../database/users')
 
 const getAllUsers =  (req,res) => {
-    res.send()
+    res.send(users);
 }
 
 const getUserId = (req,res) => {
@@ -10,9 +10,8 @@ const getUserId = (req,res) => {
     if(user){
         res.send(user);
     }else{
-        res.send('Not found')
-    }
-    res.send(id);
+        res.send('Not found');
+    };
 }
 
 const getUserByName = (req,res) => {
@@ -22,12 +21,11 @@ const getUserByName = (req,res) => {
         res.send(user);
     }else{
         res.send('Not found')
-    }
-    res.send(id);
+    };
 }
 
 module.exports = {
     getAllUsers,
     getUserId,
-    getUserByName
-}
+    getUserByName,
+};
