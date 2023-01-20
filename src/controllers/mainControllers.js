@@ -1,9 +1,11 @@
+const menu = require('../database/menu');
+
 const home =  (req,res) => {
     res.render('home')
 }
 
 const index =  (req,res) => {
-    res.render('index')
+    res.render('index',{'menu':menu})
 }
 
 const about = (req,res) => {
@@ -16,4 +18,4 @@ module.exports = {
     home,
     about,
     index
-}
+};
