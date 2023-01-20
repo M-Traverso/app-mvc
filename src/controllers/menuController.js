@@ -1,5 +1,7 @@
 const menu = require('../database/menu');
 
+
+
 const detalle = (req,res) => {
     const {id} = req.params;
     const dish = menu.find(elem => elem.id == id);
