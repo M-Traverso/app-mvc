@@ -1,14 +1,15 @@
-const users = require('../database/users')
+const users = require('../database/users');
+const path= require('path');
 
 const getAllUsers =  (req,res) => {
-    res.send(users);
+    res.render('users',{'allUsers':users});
 }
 
 const getUserId = (req,res) => {
     const {id} = req.params;
     const user = users.find(elem => elem.id == id);
     if(user){
-        res.send(user);
+        res.render('userDetail',{user});
     }else{
         res.send('Not found');
     };
