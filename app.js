@@ -1,20 +1,30 @@
 const express = require('express');
 const morgan = require('morgan');
 const routerMain = require('./src/routes/main');
-const routerMenu = require('./src/routes/menu');
 const routerUser = require('./src/routes/user');
+const path = require('path');
+
+const methodOverride = require('method-override');
 
 const port = process.env.PORT || 3001;
 
 const app = express();
 
-app.set('view engine', 'ejs')
-app.use(morgan('dev'));
+app.set('view engine','ejs');
+//configura la carpeta estatica del proyecto
 app.use(express.static('public'));
 
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+app.use(methodOverride('_method'));
+app.use(morgan('dev'));
 
 app.use(routerMain);
 app.use(routerUser);
-app.use(routerMenu);
+
+app.use((req,res,next) => {
+    res.status(404).render(path.join(__dirname,'./src/views/not-found'));
+    next();
+})
 
 app.listen(port, () => console.log(`servidor escuchando en puerto ${port}`));
